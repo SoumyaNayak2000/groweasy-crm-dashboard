@@ -43,31 +43,70 @@ export default function Sidebar() {
             sr-sidebar-logo-wrapper
             flex
             items-center
-            gap-2
+            gap-3
           "
                 >
                     <div
                         className="
-              flex
-              h-7
-              w-7
-              items-center
-              justify-center
-              rounded-lg
-              bg-black
-              text-white
-            "
+          sr-logo-icon
+          flex
+          items-center
+          justify-center
+        "
+                    > <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 44 44"
+                        className="h-7 w-7"
                     >
-                        <BriefcaseBusiness size={15} />
-                    </div>
+                            <g clipPath="url(#groweasy_svg__a)">
+                                <rect
+                                    width="43"
+                                    height="43"
+                                    x="0.5"
+                                    y="0.5"
+                                    fill="#0F0F0F"
+                                    rx="9.594"
+                                />
 
+                                <path
+                                    fill="#FBFBFB"
+                                    d="m28.282 22.731-21.5 21.501-6.795-6.794 21.5-21.501z"
+                                />
+
+                                <path
+                                    fill="#FBFBFB"
+                                    d="M8.877 15.938H28.28v6.795H8.877z"
+                                />
+
+                                <path
+                                    fill="#FBFBFB"
+                                    d="M28.28 15.938V35.34h-6.794V15.938z"
+                                />
+
+                                <path
+                                    fill="#FBFBFB"
+                                    d="M28.28 15.938V35.34h-6.793V15.938z"
+                                />
+                            </g>
+
+                            <defs>
+                                <clipPath id="groweasy_svg__a">
+                                    <rect
+                                        width="43"
+                                        height="43"
+                                        x="0.5"
+                                        y="0.5"
+                                        fill="#fff"
+                                        rx="9.594"
+                                    />
+                                </clipPath>
+                            </defs>
+                        </svg></div>
                     <h1
                         className="
-              text-[24px]
-              font-bold
-              tracking-[-0.03em]
-              text-black
-            "
+          sr-logo-text md:ml-2 text-base md:text-2xl text-black tracking-tight font-poppins font-semibold
+        "
                     >
                         GrowEasy
                     </h1>
