@@ -6,7 +6,7 @@ export default function DashboardLayout({ children }) {
         sr-dashboard-layout
         flex
         min-h-screen
-        bg-[#f7f8fa]
+        bg-[#fafafa]
       "
         >
             <Sidebar />

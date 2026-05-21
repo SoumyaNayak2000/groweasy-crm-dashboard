@@ -43,7 +43,8 @@ export default function Sidebar() {
             sr-sidebar-logo-wrapper
             flex
             items-center
-            gap-3
+            gap-1
+            justify-center
           "
                 >
                     <div

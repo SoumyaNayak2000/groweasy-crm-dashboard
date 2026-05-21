@@ -16,45 +16,21 @@ export default function SidebarOrganizationCard() {
         useState(false);
 
     const {
-        organizations,
-        activeOrganization,
         isLoadingOrganizations,
-        setOrganizations,
         setActiveOrganization,
-        setOrganizationsLoading,
-        setOrganizationsError,
     } = useOrganizationStore();
 
-    useEffect(() => {
-        async function loadOrganizations() {
-            try {
-                setOrganizationsLoading(true);
+    const organizations =
+        useOrganizationStore(
+            (state) => state.organizations
+        );
 
-                const response = await getOrganizations();
+    const activeOrganization =
+        useOrganizationStore(
+            (state) =>
+                state.activeOrganization
+        );
 
-                setOrganizations(response.data);
-
-                const defaultOrganization =
-                    response.data.find(
-                        (organization) =>
-                            organization.name === "GrowEasy AI"
-                    ) || response.data[0];
-
-                setActiveOrganization(defaultOrganization);
-            } catch (error) {
-                setOrganizationsError(error);
-            } finally {
-                setOrganizationsLoading(false);
-            }
-        }
-
-        loadOrganizations();
-    }, [
-        setOrganizations,
-        setActiveOrganization,
-        setOrganizationsLoading,
-        setOrganizationsError,
-    ]);
 
     return (
         <div className="sr-sidebar-organization-wrapper relative mt-4">
@@ -78,6 +54,8 @@ export default function SidebarOrganizationCard() {
     transition-all
     duration-200
     hover:border-[#dcdcdc]
+    cursor-pointer
+    hover:shadow-[0_4px_12px_rgba(0,0,0,0.04)]
   "
             >
                 {/* LEFT */}
@@ -139,9 +117,16 @@ export default function SidebarOrganizationCard() {
                 <ChevronRight
                     size={22}
                     strokeWidth={2}
-                    className="
-      text-[#a3a3a3]
-    "
+                    className={`
+                    text-[#a3a3a3]
+                    transition-transform
+                    duration-200
+
+                    ${isDropdownOpen
+                            ? "rotate-90"
+                            : "rotate-0"
+                        }
+                `}
                 />
             </button>
 

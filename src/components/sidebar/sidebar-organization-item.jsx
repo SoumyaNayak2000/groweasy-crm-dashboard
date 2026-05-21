@@ -25,6 +25,7 @@ export default function SidebarOrganizationItem({
           py-2
           transition-all
           duration-200
+          cursor-pointer
         `,
                 active
                     ? "bg-[#dff5ee]"
