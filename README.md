@@ -1,36 +1,391 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# GrowEasy CRM Dashboard
 
-## Getting Started
+A modern CRM dashboard built using **Next.js 16**, **React**, **TailwindCSS**, and **Zustand** as part of the GrowEasy AI frontend assignment.
 
-First, run the development server:
+The project was designed with a scalable SaaS architecture mindset focusing on:
+
+- modular frontend structure
+- reusable UI components
+- optimized rendering
+- clean state management
+- scalable folder organization
+- realistic CRM workflows
+- production-style UI architecture
+
+---
+
+# Tech Stack
+
+## Frontend
+
+- Next.js 16 (App Router)
+- React 19
+- Tailwind CSS
+- Lucide React Icons
+
+## State Management
+
+- Zustand
+
+---
+
+# Features
+
+## CRM Dashboard Layout
+
+- Responsive dashboard shell
+- Sidebar navigation
+- Dashboard header
+- Dynamic workspace layout
+- Lead details panel
+
+---
+
+# Zustand Store Architecture
+
+## Lead Store
+
+Handles:
+
+- leads data
+- selected lead
+- lead details
+- activities timeline
+- loading states
+- lead panel visibility
+
+---
+
+## Organization Store
+
+Handles:
+
+- organizations
+- active organization
+- loading states
+- organization switching
+
+---
+
+## Filter Store
+
+Handles:
+
+- search query
+- status filters
+- source filters
+- owner filters
+- date filters
+- quick filters
+
+---
+
+## Modal Store
+
+Handles:
+
+- followup modal state
+- selected followup lead
+
+---
+
+# Dynamic Organization Workflow
+
+When organization changes:
+
+- leads update automatically
+- statistics update automatically
+- lead panel resets
+- filters continue working dynamically
+
+Supports:
+
+- organizations with no leads
+- empty states
+- fallback UI
+
+---
+
+# Leads Table System
+
+Built a scalable CRM-style table with:
+
+- large data grid
+- reusable badges
+- reusable actions
+- activity workflows
+- horizontal scrolling
+- optimized rendering
+
+---
+
+# Lead Details Panel
+
+Features:
+
+- dynamic lead detail rendering
+- timeline activities
+- fallback handling
+- loading states
+- no-data states
+
+---
+
+# Timeline Activity Types
+
+Supports:
+
+- outbound calls
+- WhatsApp messages
+- campaign activities
+- lead generation events
+
+---
+
+# Follow-up Workflow
+
+Implemented reusable follow-up modal system.
+
+Features:
+
+- open from table row
+- lead-linked followup workflow
+- centralized modal state
+
+---
+
+# Mock API Architecture
+
+Simulated APIs using local JSON files.
+
+## APIs
+
+### Organizations API
+
+```js
+getOrganizations()
+```
+
+### Leads API
+
+```js
+getLeads()
+```
+
+### Lead Details API
+
+```js
+getLeadDetails(leadId)
+```
+
+---
+
+# CRM Data Structure
+
+## Organizations
+
+Includes multiple organizations such as:
+
+- GrowEasy AI
+- Sales AI
+- VK Test
+- Test Corp
+
+---
+
+## Leads
+
+Generated realistic CRM leads with:
+
+- names
+- emails
+- phone numbers
+- companies
+- acquisition sources
+- CRM metadata
+- timestamps
+
+---
+
+## Lead Details
+
+Each lead detail contains:
+
+- full lead data
+- activity timeline
+- CRM activity metadata
+- realistic CRM interactions
+
+---
+
+# Performance Optimizations
+
+Implemented several frontend optimizations:
+
+- reduced barrel imports
+- minimized unnecessary client components
+- memoized heavy table rows
+- optimized Zustand subscriptions
+- improved render flow
+- centralized loading system
+
+---
+
+# Performance Result
+
+Initial development load improved from:
+
+```txt
+11s+
+```
+
+to approximately:
+
+```txt
+185ms–335ms
+```
+
+---
+
+# Utility System
+
+## classMerge Utility
+
+Uses:
+
+- clsx
+- tailwind-merge
+
+for safe Tailwind class merging.
+
+### Example
+
+```js
+import { clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function classMerge(...inputs) {
+  return twMerge(clsx(inputs));
+}
+```
+
+---
+
+# Folder Structure
+
+```txt
+src/
+├── app/
+├── components/
+│   ├── dashboard/
+│   ├── filters/
+│   ├── layout/
+│   ├── lead-panel/
+│   ├── modals/
+│   ├── sidebar/
+│   ├── table/
+│   ├── ui/
+├── hooks/
+├── services/
+│   ├── apis/
+├── store/
+├── data/
+├── utils/
+```
+
+---
+
+# Loading Experience
+
+Implemented application-level loader to prevent:
+
+- UI blinking
+- partial rendering
+- empty table flashes
+- broken initial rendering
+
+---
+
+# Empty State Handling
+
+Gracefully handles:
+
+- no leads
+- no activities
+- no organizations
+- no timeline data
+
+---
+
+# Real-World CRM Behaviors
+
+Implemented realistic CRM workflows:
+
+- organization switching
+- lead filtering
+- lead timeline tracking
+- followup workflows
+- lead detail management
+- loading states
+- activity handling
+
+---
+
+# Future Improvements
+
+Potential future upgrades:
+
+- authentication
+- real backend integration
+- pagination
+- React Query
+- websocket updates
+- optimistic UI
+- role-based access
+- analytics dashboard
+- calendar integrations
+- notifications system
+- advanced CRM workflows
+
+---
+
+# Getting Started
+
+## Install Dependencies
+
+```bash
+npm install
+```
+
+---
+
+## Run Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Open Application
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```txt
+http://localhost:3000
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+# Conclusion
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project evolved from a frontend assignment into a scalable CRM dashboard architecture inspired by real-world SaaS applications.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Primary focus areas included:
 
-## Deploy on Vercel
+- scalability
+- maintainability
+- performance
+- UI consistency
+- reusable architecture
+- production-level frontend practices
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The project is now structured in a way that can scale into a full production CRM platform.
